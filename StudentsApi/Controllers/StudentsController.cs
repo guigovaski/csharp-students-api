@@ -37,7 +37,8 @@ public class StudentsController : ControllerBase
 	public async Task<IActionResult> Post(Student student)
 	{
 		await _studentService.CreateStudent(student);
-		return CreatedAtRoute(nameof(GetById), new { id = student.StudentId });
+		return Created(nameof(GetById), student);
+		//return CreatedAtRoute("GetStudent", new { id = student.StudentId });
 	}
 
 	[HttpPut("{id:int}")]

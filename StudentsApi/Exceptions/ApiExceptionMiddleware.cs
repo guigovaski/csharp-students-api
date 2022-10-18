@@ -35,7 +35,6 @@ public class ApiExceptionMiddleware
                     break;
             }
 
-            //var result = JsonSerializer.Serialize(responseModel);
             await response.WriteAsJsonAsync(responseModel);
         }
     }
